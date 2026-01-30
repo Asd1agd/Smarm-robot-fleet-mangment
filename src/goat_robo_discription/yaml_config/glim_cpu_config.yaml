@@ -1,0 +1,12 @@
+/glim_rosnode:
+  ros__parameters:
+    input_topic: /robot1/scan/points
+    base_frame: robot1_/base_link  # robot1_/lidar_link
+    odom_frame: robot1_/odom
+    map_frame: map
+    keyframe_delta_trans: 0.2
+    keyframe_delta_angle: 0.1
+    keyframe_delta_time: 1.0
+    publish_tf: true
+    odometry_module: "cpu"
+

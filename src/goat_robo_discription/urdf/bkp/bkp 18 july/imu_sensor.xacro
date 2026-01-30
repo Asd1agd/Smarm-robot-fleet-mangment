@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- <xacro:include filename="robot_properties.xacro" /> -->
+
+  <xacro:property name="imu_link_name" value="${prefix}imu_link"/>
+  <xacro:property name="imu_joint_name" value="${prefix}imu_joint"/>
+  <xacro:property name="imu_frame" value="${prefix}imu_frame"/>
+  <xacro:property name="imu_xyz" value="0 0 ${base_height*0.25}"/> <!-- 1/4 of base height -->
+  
+  <!-- Scaled dimensions (1/8th of wheel radius) -->
+  <xacro:property name="imu_size" value="${wheel_radius * sensor_scale}"/> <!-- 0.05 -->
+  <xacro:property name="imu_height" value="${imu_size * 0.4}"/> <!-- 0.02 -->
+  <xacro:property name="imu_mass" value="0.2"/> <!-- Increased mass -->
+
+  <link name="${imu_link_name}">
+    <visual>
+      <geometry>
+        <box size="${imu_size} ${imu_size} ${imu_height}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${imu_size} ${imu_size} ${imu_height}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="${imu_mass}"/>
+      <inertia ixx="${imu_mass*(imu_size*imu_size + imu_height*imu_height)/12}" 
+               ixy="0.0" 
+               ixz="0.0" 
+               iyy="${imu_mass*(imu_size*imu_size + imu_height*imu_height)/12}" 
+               iyz="0.0" 
+               izz="${imu_mass*(imu_size*imu_size + imu_size*imu_size)/12}"/>
+    </inertial>
+  </link>
+
+  <joint name="${imu_joint_name}" type="fixed">
+    <parent link="${prefix}base_link"/>
+    <child link="${imu_link_name}"/>
+    <origin xyz="${imu_xyz}" rpy="0 0 0"/>
+  </joint>
+</robot>

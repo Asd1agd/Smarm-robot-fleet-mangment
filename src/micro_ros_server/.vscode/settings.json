@@ -1,0 +1,42 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/asd/ros2_ws_goat1/install/MicroRos_server/lib/python3.10/site-packages",
+        "/home/asd/ros_goat_ws1/install/MicroRos_server/lib/python3.10/site-packages",
+        "/home/asd/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages",
+        "/home/asd/microros_ws/install/builtin_interfaces/local/lib/python3.10/dist-packages",
+        "/home/asd/ros2_ws9/install/my_goat_pkg/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws9/install/goat_interfaces/local/lib/python3.10/dist-packages",
+        "/home/asd/ros2_ws8/install/my_goat_pkg/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws8/install/goat_interfaces/local/lib/python3.10/dist-packages",
+        "/home/asd/ros2_ws7/install/my_py_pkg_anscer/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws7/install/custom_interfaces_anscer/local/lib/python3.10/dist-packages",
+        "/home/asd/ros2_ws4/install/esp_wifi/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws4/install/my_interfaces/local/lib/python3.10/dist-packages",
+        "/home/asd/ros2_ws4/install/maping_odom/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws/install/turtlesim_catch_them_all/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/asd/ros2_ws_goat1/install/MicroRos_server/lib/python3.10/site-packages",
+        "/home/asd/ros_goat_ws1/install/MicroRos_server/lib/python3.10/site-packages",
+        "/home/asd/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages",
+        "/home/asd/microros_ws/install/builtin_interfaces/local/lib/python3.10/dist-packages",
+        "/home/asd/ros2_ws9/install/my_goat_pkg/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws9/install/goat_interfaces/local/lib/python3.10/dist-packages",
+        "/home/asd/ros2_ws8/install/my_goat_pkg/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws8/install/goat_interfaces/local/lib/python3.10/dist-packages",
+        "/home/asd/ros2_ws7/install/my_py_pkg_anscer/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws7/install/custom_interfaces_anscer/local/lib/python3.10/dist-packages",
+        "/home/asd/ros2_ws4/install/esp_wifi/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws4/install/my_interfaces/local/lib/python3.10/dist-packages",
+        "/home/asd/ros2_ws4/install/maping_odom/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws/install/turtlesim_catch_them_all/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages",
+        "/home/asd/ros2_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

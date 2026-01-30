@@ -1,0 +1,51 @@
+# Per-robot bridges (using robot_name as a variable)
+- ros_topic_name: "/robot5/scan"
+  gz_topic_name: "/robot5/scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/robot5/Odometry"
+  gz_topic_name: "/model/robot5/odometry"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "gz.msgs.Odometry"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/robot5/joint_states"
+  gz_topic_name: "/world/world_demo/model/robot5/joint_state"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "gz.msgs.Model"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/robot5/joint_states"
+  gz_topic_name: "/world/empty/model/robot5/joint_state"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "gz.msgs.Model"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/robot5/cmd_vel"
+  gz_topic_name: "/model/robot5/cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
+# TF dynamic (shared)
+- ros_topic_name: "/tf"
+  gz_topic_name: "/model/robot5/tf"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "gz.msgs.Pose_V"
+  direction: GZ_TO_ROS
+
+# TF static (shared)
+- ros_topic_name: "/tf_static"
+  gz_topic_name: "/world/world_demo/model/robot5/pose"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "gz.msgs.Pose"
+  direction: GZ_TO_ROS
+
+# TF static (shared)
+- ros_topic_name: "/tf_static"
+  gz_topic_name: "/world/empty/model/robot5/pose"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "gz.msgs.Pose"
+  direction: GZ_TO_ROS

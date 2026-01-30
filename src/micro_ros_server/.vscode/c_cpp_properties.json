@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/asd/microros_ws/install/micro_ros_agent/include/**",
+        "/home/asd/microros_ws/install/micro_ros_msgs/include/**",
+        "/home/asd/microros_ws/install/builtin_interfaces/include/**",
+        "/home/asd/ros2_ws9/install/turtlebot3_gazebo_goat/include/**",
+        "/home/asd/ros2_ws9/install/turtlebot3_fake_node/include/**",
+        "/home/asd/ros2_ws9/install/goat_interfaces/include/**",
+        "/home/asd/ros2_ws8/install/turtlebot3_gazebo_goat/include/**",
+        "/home/asd/ros2_ws8/install/turtlebot3_gazebo/include/**",
+        "/home/asd/ros2_ws8/install/turtlebot3_fake_node/include/**",
+        "/home/asd/ros2_ws8/install/goat_interfaces/include/**",
+        "/home/asd/ros2_ws7/install/custom_interfaces_anscer/include/**",
+        "/home/asd/ros2_ws4/install/my_interfaces/include/**",
+        "/home/asd/ros2_ws/install/my_robot_interfaces/include/**",
+        "/opt/ros/humble/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

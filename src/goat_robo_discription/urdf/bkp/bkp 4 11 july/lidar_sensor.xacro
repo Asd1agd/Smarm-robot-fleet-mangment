@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:property name="prefix" value="${tf_prefix}/" />
+  <xacro:property name="lidar_link_name" value="${prefix}lidar_link"/>
+  <xacro:property name="lidar_joint_name" value="${prefix}lidar_joint"/>
+  <xacro:property name="lidar_frame" value="${prefix}lidar_frame"/>
+  <xacro:property name="lidar_mass" value="0.5"/>
+  <xacro:property name="lidar_xyz" value="0 0 0.2"/>
+
+  <link name="${lidar_link_name}">
+    <visual>
+      <geometry>
+        <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="${lidar_mass}"/>
+      <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0.0" ixz="0.0" iyz="0.0"/>
+    </inertial>
+  </link>
+
+  <joint name="${lidar_joint_name}" type="fixed">
+    <parent link="${prefix}base_link"/>
+    <child link="${lidar_link_name}"/>
+    <origin xyz="${lidar_xyz}" rpy="0 0 0"/>
+  </joint>
+
+</robot>

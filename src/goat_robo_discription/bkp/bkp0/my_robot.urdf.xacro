@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:arg name="robot_name" default="robot"/>
+    <!-- Remove trailing underscore -->
+    <xacro:arg name="tf_prefix" default="$(arg robot_name)"/>
+
+    <!-- Define properties -->
+    <xacro:property name="tf_prefix" value="$(arg tf_prefix)" />
+    <xacro:property name="robot_name" value="$(arg robot_name)" />
+    <!-- No trailing slash -->
+    <xacro:property name="prefix" value="${tf_prefix}" />
+    <!-- Common map frame (shared by all robots) -->
+    <link name="map"/>
+
+    <!-- Robot-specific odom frame -->
+    <link name="${prefix}odom"/>
+
+    <!-- Static transform from map to each robot's odom -->
+    <joint name="${prefix}map_to_odom" type="fixed">
+        <parent link="map"/>
+        <child link="${prefix}odom"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Include other files AFTER properties are defined -->
+    <xacro:include filename="common_properties.xacro" />
+    <xacro:include filename="mobile_base.xacro" />
+    <xacro:include filename="mobile_base_gazebo.xacro" />
+    <xacro:include filename="lidar_sensor.xacro"/>
+
+</robot>

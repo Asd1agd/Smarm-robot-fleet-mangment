@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="prefix" value="${tf_prefix}/" />
+
+  <gazebo reference="${prefix}caster_wheel_link">
+    <mu1 value="0.0"/>
+    <mu2 value="0.0"/>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system"
+            name="gz::sim::systems::DiffDrive">
+      <left_joint>${prefix}base_left_wheel_joint</left_joint>
+      <right_joint>${prefix}base_right_wheel_joint</right_joint>
+      <wheel_separation>0.45</wheel_separation>
+      <wheel_radius>0.1</wheel_radius>
+      <frame_id>${prefix}odom</frame_id>
+      <child_frame_id>${prefix}base_footprint</child_frame_id>
+    </plugin>
+  </gazebo>
+  
+  <gazebo>
+    <plugin filename="gz-sim-velocity-control-system"
+            name="gz::sim::systems::VelocityControl">
+      <!-- <left_joint>${prefix}base_left_wheel_joint</left_joint>
+      <right_joint>${prefix}base_right_wheel_joint</right_joint>
+      <wheel_separation>0.45</wheel_separation>
+      <wheel_radius>0.1</wheel_radius>
+      <frame_id>${prefix}odom</frame_id>
+      <child_frame_id>${prefix}base_footprint</child_frame_id>
+      <topic>/model/${robot_name}/cmd_vel</topic> -->
+    </plugin>
+  </gazebo>
+  
+
+  <gazebo>
+    <plugin filename="gz-sim-joint-state-publisher-system"
+            name="gz::sim::systems::JointStatePublisher">
+      <joint_name>${prefix}base_left_wheel_joint</joint_name>
+      <joint_name>${prefix}base_right_wheel_joint</joint_name>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="${prefix}lidar_link">
+    <sensor name="${prefix}lidar_sensor" type="gpu_lidar">
+      <pose>0 0 0 0 0 0</pose>
+      <update_rate>10</update_rate>
+      <always_on>1</always_on>
+      <visualize>true</visualize>
+      <topic>/${robot_name}/scan</topic>
+      <gz_frame_id>${prefix}lidar_link</gz_frame_id>
+      <lidar>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.12</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </lidar>
+    </sensor>
+  </gazebo>
+</robot>

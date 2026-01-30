@@ -1,0 +1,7 @@
+# StringListSend.action
+string[] input
+---
+string result
+---
+string feedback
+
