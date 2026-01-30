@@ -4,6 +4,16 @@
 
 A ROS2-based swarm robotics simulation system for automated package sorting and delivery operations in warehouse environments. Features multi-robot coordination, interactive path planning, and real-time monitoring using Ignition Gazebo simulator.
 
+server gui screenshot:
+<img width="1920" height="1080" alt="Screenshot from 2026-01-30 11-36-56" src="https://github.com/user-attachments/assets/eb07e46e-d906-43d1-b79c-325504be245d" />
+
+robot spawner and stus gui screenshot:
+<img width="597" height="308" alt="Screenshot from 2026-01-30 11-37-26" src="https://github.com/user-attachments/assets/75c1acfd-1fdc-437a-be46-2e961e960ef4" />
+
+actual gazebo simulation:
+<img width="1920" height="1080" alt="Screenshot from 2026-01-30 11-38-22" src="https://github.com/user-attachments/assets/5bae4f50-bd57-4013-b2ec-eed3da9aa770" />
+
+
 ## Project Structure
 
 ```
